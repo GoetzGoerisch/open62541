@@ -242,6 +242,10 @@ class Value(object):
 
                 extobj.value = []
                 members = enc.members
+                if enc is None:
+                    logger.warning("DataType is not found in nodeset")
+                    return ExtensionObject()
+                for e in enc.members:
 
                 # The EncodingMask must be skipped.
                 if ebodypart.localName == "EncodingMask":
@@ -258,8 +262,6 @@ class Value(object):
                         members = []
                         members.append(enc.members[data-1])
                         ebodypart = getNextElementNode(ebodypart)
-
-
                 for e in members:
                     # ebodypart can be None if the field is not set, although the field is not optional.
                     if ebodypart is None:
