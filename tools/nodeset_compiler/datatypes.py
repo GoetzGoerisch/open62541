@@ -241,11 +241,10 @@ class Value(object):
                     return extobj
 
                 extobj.value = []
-                members = enc.members
                 if enc is None:
                     logger.warning("DataType is not found in nodeset")
                     return ExtensionObject()
-                for e in enc.members:
+                members = enc.members
 
                 # The EncodingMask must be skipped.
                 if ebodypart.localName == "EncodingMask":
