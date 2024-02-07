@@ -207,7 +207,7 @@ foreach(MODEL ${UA_INFORMATION_MODEL_AUTOLOAD})
     elseif(MODEL STREQUAL "ISA95-JOBCONTROL")
         ua_generate_nodeset_and_datatypes(
                 NAME "${NODESET_NAME}"
-                FILE_CSV "${UA_NODESET_DIR}/${MODEL}/opc.ua.isa95-jobcontrol.nodeset2.csv"
+                FILE_CSV "${UA_NODESET_DIR}/${MODEL}/opc.ua.isa95-jobcontrol.nodeids.csv"
                 FILE_NS "${UA_NODESET_DIR}/${MODEL}/opc.ua.isa95-jobcontrol.nodeset2.xml"
                 INTERNAL
                 AUTOLOAD
