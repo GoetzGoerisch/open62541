@@ -20,6 +20,7 @@
 *.cmake
 .dirstamp
 /bin
+/bsd_files_gen
 m4
 /autom4te.cache
 Makefile
@@ -72,6 +73,7 @@ tests/check_memory
 tests/check_namespace
 tests/coverage
 tests/**/CMakeFiles
+tools/**/CMakeFiles
 Testing
 Makefile
 /CMakeCache.txt
