@@ -117,7 +117,7 @@ def write_code_generation(file):
     # List which contains the existing namespaces
     existing_namespaces = []
     for line in lines:
-        namespaces = re.findall("namespace_.*_generated\(.*\)", line)
+        namespaces = re.findall("namespace_.*_generated\\(.*\\)", line)
         if namespaces:
             namespaces = namespaces[0].split("(")[0]
             existing_namespaces.append(namespaces)
