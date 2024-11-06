@@ -17,6 +17,7 @@ jobs:
           "Debug Build & Unit Tests with Alarms&Conditions (gcc)",
           "Debug Build & Unit Tests (clang-11)",
           "Debug Build & Unit Tests (clang-15)",
+          "Debug Build & Unit Tests (clang-18)",
           "Debug Build & Unit Tests (tcc)",
           "Encryption (MbedTLS) Build & Unit Tests (gcc)",
           "PubSub Encryption (MbedTLS) Build & Unit Tests (gcc)",
@@ -66,6 +67,10 @@ jobs:
             runs_on: "ubuntu-22.04"
             cmd_deps: sudo apt-get install -y -qq clang-15 clang-tools-15 mosquitto && sudo sysctl -w vm.mmap_rnd_bits=28
             cmd_action: CC=clang-15 CXX=clang++-15 unit_tests
+          - build_name: "Debug Build & Unit Tests (clang-18)"
+            runs_on: "ubuntu-24.04"
+            cmd_deps: sudo apt-get install -y -qq clang-18 clang-tools-18 mosquitto && sudo sysctl -w vm.mmap_rnd_bits=28
+            cmd_action: CC=clang-18 CXX=clang++-18 unit_tests
           - build_name: "Debug Build & Unit Tests (tcc)"
             cmd_deps: sudo apt-get install -y -qq tcc mosquitto
             cmd_action: CC=tcc unit_tests
